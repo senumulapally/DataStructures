@@ -23,7 +23,7 @@ class Solution(object):
                 start = mid+1  # Updating start-pointer to the next index of mid-pointer
             else:
                 end = mid  # If the Mid-pointer value is >= target value updating the end pointer to mid-pointer.
-        if nums[start] < target:  # If the target value is to be inserted at the end
+        if nums[start] < target:  # If the target value is to be positioned at the end
             start += 1  # Incrementing start-pointer value by 1
         return start  # Returning start pointer
 
