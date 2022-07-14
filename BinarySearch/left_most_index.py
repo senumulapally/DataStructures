@@ -4,10 +4,10 @@ If target is not found in the array, return -1
 You must write an algorithm with O(log n) runtime complexity.
 
 Test Cases:
-assert s1.getRightMostIndex([1,1,1], 1) == 2
+assert s1.getRightMostIndex([1,1,1], 1) == 0
 assert s1.getRightMostIndex([1], 1) == 0
-assert s1.getRightMostIndex([1, 2, 2, 3, 3, 3, 4], 3) == 5
-assert s1.getRightMostIndex([1, 2, 2, 2, 3, 3, 3, 4, 4, 4, 4, 5], 4) == 10
+assert s1.getRightMostIndex([1, 2, 2, 3, 3, 3, 4], 3) == 3
+assert s1.getRightMostIndex([1, 2, 2, 2, 3, 3, 3, 4, 4, 4, 4, 5], 5) == 11
 '''
 
 
@@ -29,8 +29,8 @@ def getRightMostIndex(nums, target):
         mid = start + (end - start) // 2  # Calculating mid-point (Integer Overflow exception handled)
         if target == nums[mid]:
             index = mid  # Updating flag with the latest index of target value
-            start = mid + 1  # Moving the start-pointer to the next value of mid-pointer as we are looking for
-            # right most index.
+            end = mid - 1  # Moving the end-pointer to the previous value of mid-pointer as we are looking for
+            # left most index.
         elif target < nums[mid]:
             end = mid - 1  # Updating end-pointer when target is less than the mid-pointer value
         else:
@@ -38,8 +38,8 @@ def getRightMostIndex(nums, target):
     return index
 
 
-assert getRightMostIndex([1, 1, 1], 1) == 2  # Running Test Case 1
+assert getRightMostIndex([1, 1, 1], 1) == 0  # Running Test Case 1
 assert getRightMostIndex([1], 1) == 0  # Running Test Case 2
-assert getRightMostIndex([1, 2, 2, 3, 3, 3, 4], 3) == 5  # Running Test Case 3
+assert getRightMostIndex([1, 2, 2, 3, 3, 3, 4], 3) == 3  # Running Test Case 3
 assert getRightMostIndex([1, 2, 2, 2, 3, 3, 3, 4, 4, 4, 4, 5], 5) == 11  # Running Test Case 4
 assert getRightMostIndex([1, 2, 2, 2, 3, 3, 3, 4, 4, 4, 4, 5], 7) == -1  # Running Test Case 5
