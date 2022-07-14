@@ -41,3 +41,4 @@ assert getRightMostIndex([1, 1, 1], 1) == 2  # Running Test Case 1
 assert getRightMostIndex([1], 1) == 0  # Running Test Case 2
 assert getRightMostIndex([1, 2, 2, 3, 3, 3, 4], 3) == 5  # Running Test Case 3
 assert getRightMostIndex([1, 2, 2, 2, 3, 3, 3, 4, 4, 4, 4, 5], 5) == 11  # Running Test Case 4
+assert getRightMostIndex([1, 2, 2, 2, 3, 3, 3, 4, 4, 4, 4, 5], 7) == -1  # Running Test Case 5
