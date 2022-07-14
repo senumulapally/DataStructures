@@ -22,7 +22,7 @@ class Solution:
             if nums[mid] < target:  # Checking if mid-pointer value is less than that of target
                 start = mid + 1  # Updating start-pointer to the next index of mid-pointer
             else:
-                end = mid  # If the Mid-pointer value is >= target value updating the end pointer to mid pointer.
+                end = mid  # If the Mid-pointer value is >= target value updating the end pointer to mid-pointer.
         return start  # Returning start pointer
 
 
