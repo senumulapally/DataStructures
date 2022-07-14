@@ -7,8 +7,13 @@ class Solution(object):
         """
         start = 0  # Initializing start-pointer
         end = len(nums) - 1  # Initializing end-pointer
-        while start <= end:  # While loop ends when start-pointer is greater than end-pointer
-            mid = start + ((end - start) // 2)  # Calculating mid-point (Integer Overflow exception handling)
+        ''' 
+        While loop ends when start-pointer is greater than end-pointer. 
+        Loop condition is start<=end because when start = end either the target value 'found' or 'not found' conditions 
+        are met 
+        '''
+        while start <= end:
+            mid = start + ((end - start) // 2)  # Calculating mid-point (Integer Overflow exception handled)
             if target < nums[mid]:
                 end = mid - 1  # Updating end-pointer when target is less than the mid-pointer value
             elif target > nums[mid]:
