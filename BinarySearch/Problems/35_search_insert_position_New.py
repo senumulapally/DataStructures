@@ -3,6 +3,8 @@ Given a sorted array of distinct integers and a target value, return the index i
 return the index where it would be if it were inserted in order.
 You must write an algorithm with O(log n) runtime complexity.
 """
+
+
 class Solution(object):
     def searchInsert(self, nums, target):
         """
@@ -11,22 +13,23 @@ class Solution(object):
         :rtype: int
         """
         start = 0
-        end = len(nums)-1
-        while start < end:
+        end = len(nums) - 1
+        while start <= end:
             '''
             While loop is written for start < end,
             as we want to terminate the loop once the start-pointer is equal to end-pointer.
             Start-pointer equals the end-pointer when the index of target value is reached.
             '''
-            mid = start + (end-start)//2  # Calculating Mid-pointer
-            if nums[mid] < target:  # Checking if mid-pointer value is less than that of target
-                start = mid+1  # Updating start-pointer to the next index of mid-pointer
+            mid = start + (end - start) // 2
+            if target == nums[mid]:
+                return mid
+            elif target < nums[mid]:
+                end = mid - 1  # Updating end-pointer when target is less than the mid-pointer value
             else:
-                end = mid  # If the Mid-pointer value is >= target value updating the end pointer to mid-pointer.
+                start = mid + 1  # Updating start-pointer when target is greater than the mid-pointer value
 
-        if nums[start] < target:  # If the target value is to be positioned at the end
-            start += 1  # Incrementing start-pointer value by 1
-        return start  # Returning start pointer
+        if start > end:
+            return start  # Returning start pointer
 
 
 object1 = Solution()
