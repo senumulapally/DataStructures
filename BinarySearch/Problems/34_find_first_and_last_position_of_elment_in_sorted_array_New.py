@@ -31,4 +31,5 @@ assert object1.searchRange([5, 7, 7, 8, 8, 10], 10) == [5, 5]  # Running Test Ca
 assert object1.searchRange([5, 7, 7, 8, 8, 10], 6) == [-1, -1]  # Running Test Case 2
 assert object1.searchRange([], 0) == [-1, -1]  # Running Test Case 3
 assert object1.searchRange([5, 7, 7, 8, 8, 10], 8) == [3, 4]  # Running Test Case 4
-assert object1.searchRange([5, 7, 7, 8, 8, 10], 5) == [0,0] # Running Test Case 5
+assert object1.searchRange([5, 7, 7, 8, 8, 10], 5) == [0, 0]  # Running Test Case 5
+assert object1.searchRange([1, 1, 1], 1) == [0, 2]  # Running Test Case 6
