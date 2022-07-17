@@ -15,12 +15,12 @@ class Solution(object):
         end = len(nums) - 1  # Initiating end-pointer
         while start <= end:
             mid = start + (end-start)//2  # Calculating Mid-pointer
-            if target <= nums[mid]:  # If the target number is less than or equal to the mid-point value,
+            if nums[mid] < target:  # Even if there is a condition where the target value is at the mid-point
+                # the loop will continue till the start-pointer reaches the first position of duplicate target values
+                start = mid + 1
+            else:  # If the target number is less than or equal to the mid-point value,
                 # end-pointer will be updated to the previous value of mid.
                 end = mid - 1
-            else:  # Even if there is a condition where the target value is at the mid-point the loop will continue
-                # till the start-pointer reaches the first position of duplicate target values
-                start = mid + 1
 
         return start  # Hence, returning start-pointer
 
