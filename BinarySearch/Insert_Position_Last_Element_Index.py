@@ -1,3 +1,9 @@
+"""
+Given an array of elements with duplicate values,
+If the target value is present in the array, the position next to the last duplicate element should be returned.
+Else, the possible correct position of the element should be returned
+"""
+
 class Solution(object):
     def insertAtFirstElementIndex(self, nums, target):
         """
