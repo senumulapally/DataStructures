@@ -19,7 +19,9 @@ class Solution(object):
 
         return letters[start % len(letters)]  # By the end of this loop, start pointer will be pointed to the next value
         # of the target. Hence, it is returned
-        # When the index is out of range
+        # When the index is out of range, start % length of numbers will return
+        # the reminder as 0 as start will be pointed to one value greater than the last index value.
+        # Hence, first letter in the array will be returned.
 
 
 obj1 = Solution()
