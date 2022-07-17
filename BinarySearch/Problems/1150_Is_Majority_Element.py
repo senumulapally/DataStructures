@@ -56,5 +56,8 @@ class Solution(object):
 
 
 obj1 = Solution()
-print(obj1.isMajorityElement([2, 4, 5, 5, 5, 5, 5, 6, 6], 5))
-print(obj1.isMajorityElement([438885258], 786460391))
+assert obj1.isMajorityElement([2, 4, 5, 5, 5, 5, 5, 6, 6], 5) == True  # Test Case 1
+assert obj1.isMajorityElement([438885258], 786460391) == False  # Test Case 2
+assert obj1.isMajorityElement([2, 4, 5, 5, 5, 5, 5, 6, 6], 6) == False  # Test Case 3
+assert obj1.isMajorityElement([2, 4, 5, 5, 5, 5, 5, 6, 6], 2) == False  # Test Case 4
+assert obj1.isMajorityElement([2, 4, 5, 5, 5, 5, 5, 6, 6], 1) == False  # Test Case 5
