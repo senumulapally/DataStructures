@@ -11,7 +11,7 @@ class Solution(object):
         if target < letters[end]:  # When the target letter is greater than the greatest letter in the list,
             # Index out of range error is occurred
 
-            while start < end:  # Once the start>end the loop ends, we shall return the start-pointer
+            while start <= end:  # Once the start>end the loop ends, we shall return the start-pointer
                 # as it points to the next least element of the target
                 mid = start + (end - start) // 2  # Calculating the mid-point.
                 if letters[
@@ -36,3 +36,5 @@ assert obj1.nextGreatestLetter(["a", "b", "c", "f", "f"], "d") == "f"  # Test Ca
 assert obj1.nextGreatestLetter(["a", "b", "c", "f"], "g") == "Range exceeded"  # Test Case 4
 assert obj1.nextGreatestLetter(["a", "b", "c", "f", "h"], "g") == "h"  # Test Case 5
 assert obj1.nextGreatestLetter(["a", "b", "c", "c", "f", "h"], "g") == "h"  # Test Case 6
+assert obj1.nextGreatestLetter(["e", "e", "e", "e", "e", "e", "n", "n", "n", "n"], "e") == "n"  # Test Case 7
+assert obj1.nextGreatestLetter(["e", "e", "e", "e", "e", "e", "n", "n", "n", "n"], "f") == "n"  # Test Case 8
