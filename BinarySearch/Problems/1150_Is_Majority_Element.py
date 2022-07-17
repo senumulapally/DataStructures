@@ -1,3 +1,10 @@
+"""
+Given an integer array nums sorted in non-decreasing order and an integer target, return true if target
+is a majority element, or false otherwise. A majority element in an array nums is an element
+that appears more than nums.length / 2 times in the array.
+"""
+
+
 class Solution(object):
     def isMajorityElement(self, nums, target):
         """
@@ -5,12 +12,13 @@ class Solution(object):
         :type target: int
         :rtype: bool
         """
-        [x, y] = self.searchRange(nums, target)
-        a = (y - x) + 1
-        if a > len(nums) / 2 and x >= 0 and y >= 0:
-            return True
+        [startIndex, endIndex] = self.searchRange(nums, target)  # Calculating range of target element
+        elementLength = (endIndex - startIndex) + 1  # Finding the element length in array
+        if elementLength > len(nums) / 2 and x >= 0 and y >= 0:  # If element length is greater than
+            # ListLength/2 then it is a majority element
+            return True  # Hence, returning true
         else:
-            return False
+            return False  # Else, false
 
     def searchRange(self, nums, target):
         """
