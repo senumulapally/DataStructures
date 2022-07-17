@@ -15,9 +15,8 @@ class Solution(object):
         end = len(nums) - 1  # Initiating end-pointer
         while start <= end:
             mid = start + (end - start) // 2  # Calculating Mid-pointer
-            if nums[mid] < target + 1:  # If the nexxt number of the target number is greater than or equal
+            if nums[mid] < target + 1:  # If the next number of the target number is greater than or equal
                 # to the mid-point value, start-pointer will be updated to the next value of mid.
-                # As we need the next index of the last duplicate target value
                 start = mid + 1
             else:  # Else, the end-pointer value is updated to the previous value of mid-pointer
                 end = mid - 1
