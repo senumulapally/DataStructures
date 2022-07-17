@@ -8,10 +8,6 @@ class Solution(object):
         start = 0  # Initiating start-pointer
         end = len(letters) - 1  # Initiating end-pointer
 
-        if target >= letters[end]:  # When the target letter is greater than the greatest letter in the list,
-            # Index out of range error is occurred
-            return letters[0]  # This text is returned when the selected target's index is out of range.
-
         while start <= end:  # Once the start>end the loop ends, we shall return the start-pointer
             # as it points to the next least element of the target
             mid = start + (end - start) // 2  # Calculating the mid-point.
@@ -21,8 +17,10 @@ class Solution(object):
             else:  # Else, end-pointer is updated to the previous point of mid-point
                 end = mid - 1
 
-        return letters[start]  # By the end of this loop, start pointer will be pointed to the next value
+        return letters[start % len(letters)]  # By the end of this loop, start pointer will be pointed to the next value
         # of the target. Hence, it is returned
+        # When the index is out of range
+
 
 obj1 = Solution()
 assert obj1.nextGreatestLetter(["c", "f", "j"], "a") == "c"  # Test Case 1
