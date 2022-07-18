@@ -23,8 +23,9 @@ class Solution(object):
         :type target: int
         :rtype: int
         """
-        end = self.getPossibleIndex(reader, target)
-        start = end//2
+        end = self.getPossibleIndex(reader, target)  # Calling method to get the possible index or possible smallest
+        # invalid index and assigning it to the end-pointer.
+        start = end//2  # Initiating start-pointer to 2^i//2 i.e., 2^(i-1) as target is present before this index.
         while start <= end:
             mid = start + (end - start) // 2
             if self.ArrayReader(reader, mid) == target:
@@ -63,8 +64,8 @@ class Solution(object):
             return reader[index]
 
 obj1 = Solution()
-print(obj1.search([-1,0,3,5,9,12], 9))  # Test case 1
-print(obj1.search([-1,0,3,5,9,12], 13))  # Test case 1
-print(obj1.search([-1,0,3,5,9,12], -3))  # Test case 1
-print(obj1.search([-1,0,3,5,9,12], 5))  # Test case 1
-print(obj1.search([5], 5))  # Test case 1
+print(obj1.search([-1, 0, 3, 5, 9, 12], 9))  # Test case 1
+print(obj1.search([-1, 0, 3, 5, 9, 12], 13))  # Test case 2
+print(obj1.search([-1, 0, 3, 5, 9, 12], -3))  # Test case 3
+print(obj1.search([-1, 0, 3, 5, 9, 12], 5))  # Test case 4
+print(obj1.search([5], 5))  # Test case 5
