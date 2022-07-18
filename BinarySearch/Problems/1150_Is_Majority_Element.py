@@ -12,9 +12,15 @@ class Solution(object):
         :type target: int
         :rtype: bool
         """
+        start = 0
+        end = len(nums)-1
+        mid = start + (end - start)//2
+        if nums[mid] != target:
+            return False
+
         [startIndex, endIndex] = self.searchRange(nums, target)  # Calculating range of target element
         elementLength = (endIndex - startIndex) + 1  # Finding the element length in array
-        if elementLength > len(nums) / 2 and x >= 0 and y >= 0:  # If element length is greater than
+        if elementLength > len(nums) / 2 and startIndex >= 0 and endIndex >= 0:  # If element length is greater than
             # ListLength/2 then it is a majority element
             return True  # Hence, returning true
         else:
