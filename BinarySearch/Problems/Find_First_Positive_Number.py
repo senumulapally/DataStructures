@@ -22,15 +22,17 @@ class Solution(object):
         start = end // 2  # Initiating start-pointer to 2^i//2 i.e., 2^(i-1) as target is present before this index.
         while start <= end:
             mid = start + (end - start) // 2
-            if self.functionReader(mid, formula) == "Positive":  # If the mid-value is positive we cannot surely
+            if self.functionReader(mid, formula) == "Positive" and self.functionReader(mid-1, formula) == "Negative":
+                # If the mid-value is positive we cannot surely
                 # say that it is the first positive value
-                if self.functionReader(mid-1, formula) == "Negative":  # Hence, checking the previous value,
-                    # If previous value is negative, returning mid-value.
-                    return mid
-                else:  # Else, updating end pointer to previous value of mid-pointer.
-                    end = mid - 1
-            else:
+                # Hence, checking the previous value,
+                # If previous value is negative, returning mid-value.
+                return mid
+            elif self.functionReader(mid, formula) == "Negative":  # If, Mid-value is negative updating start-pointer
+                # to next value of mid-pointer.
                 start = mid + 1
+            else:   # Else, updating end pointer to previous value of mid-pointer.
+                end = mid - 1
         return -1
 
     def getPossibleIndex(self, formula):
