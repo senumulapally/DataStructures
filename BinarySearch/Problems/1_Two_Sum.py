@@ -16,8 +16,11 @@ class Solution(object):
             while start <= end:
                 mid = start + (end - start) // 2
                 if nums[mid] == target - nums[i]:
-                    return [indexDict.get(nums[i]), indexDict.get(nums[mid])]  # Getting the index values of array
-                    # before sorting using dictionary key-value pairs
+                    if indexDict.get(nums[i]) < indexDict.get(nums[mid]):
+                        return [indexDict.get(nums[i]), indexDict.get(nums[mid])]  # Getting the index values of array
+                        # before sorting using dictionary key-value pairs
+                    else:
+                        return [indexDict.get(nums[mid]), indexDict.get(nums[i])]
                 elif nums[mid] < target - nums[i]:
                     start = mid + 1
                 else:
@@ -27,5 +30,5 @@ class Solution(object):
 
 obj1 = Solution()
 assert obj1.twoSum([2, 7, 11, 15], 9) == [0, 1]  # Test Case 1
-assert obj1.twoSum([0, 4, 3, 0], 0) == [0, 3]  # Test Case 2
+assert obj1.twoSum([0, 4, 3], 7) == [1, 2]  # Test Case 2
 assert obj1.twoSum([3, 2, 4], 6) == [1, 2]  # Test Case 3
