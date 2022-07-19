@@ -69,3 +69,5 @@ assert obj1.firstPositiveNumber("2*x-20") == 10  # Test Case 1
 assert obj1.firstPositiveNumber("2*x-30") == 15  # Test Case 2
 assert obj1.firstPositiveNumber("x-45") == 45  # Test Case 3
 assert obj1.firstPositiveNumber("5*x-45") == 9  # Test Case 4
+assert obj1.firstPositiveNumber("5*x") == 0  # Test Case 4
+assert obj1.firstPositiveNumber("5*x-6") == 2  # Test Case 4
