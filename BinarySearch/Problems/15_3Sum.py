@@ -25,7 +25,7 @@ class Solution(object):
             end = len(nums) - 1
             while start <= end:
                 mid = start + (end - start) // 2
-                x = sorted([nums[i], nums[mid], val])
+                x = [val, nums[i], nums[mid]]
                 if nums[mid] == target - nums[i] and x not in finalLis:  # If the triplet is already present in the
                     # final list we are not adding it to the current list
                     finalLis.append(x)
@@ -40,6 +40,13 @@ obj1 = Solution()
 
 assert obj1.threeSum([-1, 0, 1, 2, -1, -4]) == [[-1, -1, 2], [-1, 0, 1]] # Test Case 1
 assert obj1.threeSum([0, 1, 1]) == []  # Test Case 2
-assert obj1.threeSum([0, 0, 0]) == [0, 0, 0]  # Test Case 3
-assert obj1.threeSum([0, 0, 0, 0]) == [0, 0, 0]   # Test Case 4
+assert obj1.threeSum([0, 0, 0]) == [[0, 0, 0]]  # Test Case 3
+assert obj1.threeSum([0, 0, 0, 0]) == [[0, 0, 0]]   # Test Case 4
 assert obj1.threeSum([-2, 0, 1, 1, 2]) == [[-2, 0, 2], [-2, 1, 1]]  # Test Case 5
+
+
+# print(obj1.threeSum([-1, 0, 1, 2, -1, -4])) # Test Case 1
+# print(obj1.threeSum([0, 1, 1]))  # Test Case 2
+# print(obj1.threeSum([0, 0, 0]))  # Test Case 3
+# print(obj1.threeSum([0, 0, 0, 0])) # Test Case 4
+# print(obj1.threeSum([-2, 0, 1, 1, 2]))  # Test Case 5
