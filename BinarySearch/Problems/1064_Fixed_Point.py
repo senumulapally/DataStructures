@@ -20,10 +20,10 @@ class Solution(object):
                 end = mid - 1  # As we need to return the lowest value, checking if there are any other
                 # values which are less than current index match with their index.
                 # So, updating end to previous value of mid
-            elif arr[mid] > mid:
-                end = mid - 1
-            else:
+            elif arr[mid] < mid:
                 start = mid + 1
+            else:
+                end = mid - 1
         return retVal
 
 
