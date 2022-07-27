@@ -32,6 +32,3 @@ assert obj1.fixedPoint([-10, -5, -2, 0, 4, 5, 6, 7, 8, 9, 10]) == 4
 assert obj1.fixedPoint([-10, -5, 0, 3, 7]) == 3
 assert obj1.fixedPoint([0, 2, 5, 8, 17]) == 0
 assert obj1.fixedPoint([-10, -5, 3, 4, 7, 9]) == -1
-
-As we need to return the lowest value, we need to check if there are any other values which are less than mid-index and match with their index.
-Updating end to previous value of mid.
