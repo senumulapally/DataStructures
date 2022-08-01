@@ -33,12 +33,15 @@ class Solution(object):
     def findPeak(self, arr):
         low = 0
         high = arr.length() - 1
+        arrLen = arr.length()
         while low <= high:
             mid = low + (high - low) // 2
             midVal = arr.get(mid)
-            plusOne = arr.get(mid + 1)
-            minusOne = arr.get(mid - 1)
-            if midVal > plusOne and midVal > minusOne:
+            if (mid < arrLen - 1):
+                plusOne = arr.get(mid + 1)
+            if mid > 0:
+                minusOne = arr.get(mid - 1)
+            if (mid > 0 and midVal > plusOne) and (midVal > minusOne and mid < arrLen - 1):
                 return mid
             elif midVal < plusOne:
                 low = mid + 1
