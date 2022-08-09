@@ -17,6 +17,6 @@ def MaximumSubArray(k, nums):
     return maxSum  # Returning the max Sum.
 
 
-print(MaximumSubArray(2, [100, 200, 300, 400]) == 700)
-print(MaximumSubArray(4, [1, 4, 2, 10, 23, 3, 1, 0, 20]) == 39)
-print(MaximumSubArray(3, [2, 3]) == "Invalid Range")
+print(MaximumSubArray(2, [100, 200, 300, 400]) == 700)  # TestCase 1
+print(MaximumSubArray(4, [1, 4, 2, 10, 23, 3, 1, 0, 20]) == 39)  # TestCase 2
+print(MaximumSubArray(3, [2, 3]) == "Invalid Range")  # TestCase 3
