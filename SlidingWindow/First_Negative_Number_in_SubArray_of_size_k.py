@@ -6,7 +6,6 @@ Output must be list
 
 
 def firstNegativeNumber(nums, k):
-    windowArr = []
     finaArr = []
     negNum = []
     if len(nums) < k:
@@ -15,11 +14,8 @@ def firstNegativeNumber(nums, k):
     for i in range(len(nums)):
         if nums[i] < 0:  # Adding all the negative numbers to a list called negNum
             negNum.append(i)
-        if i < k - 1:  # Creating the first window of K size.
-            # The values keep adding to a list windowArr until the index is k-1
-            windowArr.append(i)
+        if i < k - 1:
             continue
-        windowArr.append(i)  # The last element of every window will be added here
         if len(negNum) == 0:  # If the length of negNum list is 0, appending 0 to finalArr
             finaArr.append(0)
         else:
@@ -27,7 +23,6 @@ def firstNegativeNumber(nums, k):
                 # i.e., checking if the index is a part of window
                 negNum.pop(0)  # If first number is not part of sliding window popping it from negNum list
             finaArr.append(nums[negNum[0]])  # Appending the least negative number in sliding window to finalArr
-        windowArr.pop(0)  # Popping the first element of windowArr to slide it to next term
     return finaArr  # Returning finalArr
 
 
