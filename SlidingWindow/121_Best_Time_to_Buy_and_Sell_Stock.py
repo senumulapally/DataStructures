@@ -32,8 +32,8 @@ class Solution(object):
 
 
 obj1 = Solution()
-print(obj1.maxProfit([7, 1, 5, 3, 6, 4]) == 5)
-print(obj1.maxProfit([7, 6, 4, 3, 1]) == 0)
-print(obj1.maxProfit([7, 1, 5, 3, 6, 4, 2, 8, 9, 10]) == 9)
-print(obj1.maxProfit([1, 2]) == 1)
-print(obj1.maxProfit([2]) == 0)
+print(obj1.maxProfit([7, 1, 5, 3, 6, 4]) == 5)  # TestCase 1
+print(obj1.maxProfit([7, 6, 4, 3, 1]) == 0)  # TestCase 2
+print(obj1.maxProfit([7, 1, 5, 3, 6, 4, 2, 8, 9, 10]) == 9)  # TestCase 3
+print(obj1.maxProfit([1, 2]) == 1)  # TestCase 4
+print(obj1.maxProfit([2]) == 0)  # TestCase 5
