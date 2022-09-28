@@ -1,3 +1,8 @@
+"""
+Given an integer array nums, return 3 indexes where sum of integers at that indexes = target.
+"""
+
+
 class Solution(object):
     def threeSum(self, nums, target):
         """
