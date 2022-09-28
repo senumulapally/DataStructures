@@ -26,10 +26,7 @@ class Solution(object):
         """
         if root is None:
             return None
-        if root.left is not None:
-            self.dfs(root.left, output)
+        self.dfs(root.left, output)
         output.append(root.val)
-        if root.right is not None:
-            self.dfs(root.right, output)
-
+        self.dfs(root.right, output)
         return output
