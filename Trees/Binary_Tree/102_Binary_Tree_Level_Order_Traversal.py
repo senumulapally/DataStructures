@@ -33,8 +33,15 @@ class Solution(object):
             node = root
             for i in range(0,level_len):
                 node = deq.popleft()
-
                 if node.left:
+                    deq.append(node.left.val)
+                    level_arr.append(node.left.val)
+                if node.right:
+                    deq.append(node.right.val)
+                    level_arr.append(node.right.val)
+            
+
+
 
 
 
