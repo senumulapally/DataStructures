@@ -1,4 +1,5 @@
 """Given the root of a binary tree, invert the tree, and return its root."""
+
 """Sol: Write a recursive function to swap the lrft and right nodes for root value and 
 recursively call the function for left and right nodes until 'None' is reached."""
 
@@ -8,6 +9,8 @@ recursively call the function for left and right nodes until 'None' is reached."
 #         self.val = val
 #         self.left = left
 #         self.right = right
+
+
 class Solution(object):
     def invertTree(self, root):
         """
