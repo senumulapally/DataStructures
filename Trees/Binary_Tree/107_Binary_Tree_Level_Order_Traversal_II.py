@@ -1,24 +1,13 @@
 """
-Given the root of a binary tree,
-return the level order traversal of its nodes' values. (i.e., from left to right, level by level).
+Given the root of a binary tree, return the bottom-up level order traversal of its nodes'
+values. (i.e., from left to right, level by level from leaf to root).
 
 Sol: 
 1. Add root node to deq. While deq is not null,
 2. Length of deq will be the length of level
 3. keep popping the left node in deq and add to the level array.
-4. after each level append the level array to output array.
-5. once deq is empty, return output array
-"""
-"""
-example testcases:
-Input: root = [3,9,20,null,null,15,7]
-Output: [[3],[9,20],[15,7]]
-
-Input: root = [1]
-Output: [[1]]
-
-Input: root = []
-Output: []
+4. after each level append the level array to the left of output deq.
+5. once deq is empty, return output deq.
 """
 
 # Definition for a binary tree node.
@@ -27,9 +16,8 @@ Output: []
 #         self.val = val
 #         self.left = left
 #         self.right = right
-
 class Solution(object):
-    def levelOrder(self, root):
+    def levelOrderBottom(self, root):
         """
         :type root: TreeNode
         :rtype: List[List[int]]
@@ -37,7 +25,7 @@ class Solution(object):
         if root is None:
             return None
         deq = deque([root, ]);
-        output = [];
+        output = deque([]);
         while deq:
             level_arr = []
             levelLen = len(deq)
@@ -49,19 +37,6 @@ class Solution(object):
                 if node.right is not None:
                     deq.append(node.right)
 
-            output.append(level_arr);
+            output.appendleft(level_arr);
 
         return output;
-
-
-
-
-
-
-
-
-
-
-
-
-
