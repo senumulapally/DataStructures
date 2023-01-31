@@ -24,22 +24,24 @@ class Solution(object):
         :type root: TreeNode
         :rtype: List[List[int]]
         """
-        deq = deque([root,])
-        output = []
-        level = 0
+        if root is None:
+            return None
+        deq = deque([root, ]);
+        output = [];
         while deq:
-            level_len = len(deq)
-            level_arr= []
-            node = root
-            for i in range(0,level_len):
-                node = deq.popleft()
-                if node.left:
-                    deq.append(node.left.val)
-                    level_arr.append(node.left.val)
-                if node.right:
-                    deq.append(node.right.val)
-                    level_arr.append(node.right.val)
-            
+            level_arr = []
+            levelLen = len(deq)
+            for i in range(0, levelLen):
+                node = deq.popleft();
+                level_arr.append(node.val)
+                if node.left is not None:
+                    deq.append(node.left)
+                if node.right is not None:
+                    deq.append(node.right)
+
+            output.append(level_arr);
+
+        return output;
 
 
 
