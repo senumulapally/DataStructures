@@ -2,7 +2,8 @@
 A binary tree is uni-valued if every node in the tree has the same value.
 Given the root of a binary tree, return true if the given tree is uni-valued, or false otherwise.
 
-sol:
+sol: Store root value and compare to each value while traversing.
+Whenever a value different from root value is encountered, return false.
 """
 
 # Definition for a binary tree node.
