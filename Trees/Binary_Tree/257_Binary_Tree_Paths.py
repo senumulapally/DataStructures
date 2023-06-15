@@ -13,7 +13,7 @@ Output: ["1->2->5","1->3"]
 Input: root = [1]
 Output: ["1"]
 """
-
+import CreateBinaryTree
 
 # Definition for a binary tree node.
 # class TreeNode(object):
@@ -21,7 +21,7 @@ Output: ["1"]
 #         self.val = val
 #         self.left = left
 #         self.right = right
-class Solution(object):
+class Solution1(object):
     def binaryTreePaths(self, root):
         """
         :type root: TreeNode
@@ -40,15 +40,15 @@ class Solution(object):
             return paths
 
         currPath = currPath + "->"
-        left = self.treePaths(root.left, paths, currPath)
-        right = self.treePaths(root.right, paths, currPath)
+        self.treePaths(root.left, paths, currPath)
+        self.treePaths(root.right, paths, currPath)
 
         return paths
 
 
 # BFS - returning list of paths
 
-class Solution(object):
+class Solution2(object):
     def binaryTreePaths(self, root):
         """
         :type root: TreeNode
@@ -75,7 +75,7 @@ class Solution(object):
 
 # DFS- 2 - returning list of paths
 
-class Solution(object):
+class Solution3(object):
     def binaryTreePaths(self, root):
         """
         :type root: TreeNode
@@ -87,12 +87,31 @@ class Solution(object):
     def dfs(self, node, output, slate):
         if node is None:
             return None
-        slate = slate.append(node.val)
+        slate.append(node.val)
         if node.left is None and node.right is None:
-            output.append(slate);
+            output.append(slate.copy());
         if node.left is not None:
-            self.dfs(node.left, slate)
+            self.dfs(node.left, output, slate)
         if node.right is not None:
-            self.dfs(node.right, slate)
+            self.dfs(node.right,output, slate)
         slate.pop()
         return output;
+
+
+bst = CreateBinaryTree.createBinarySearchTree()
+
+# Inserting elements manually
+bst.manual_insert(50, None)  # Root node
+# print(bst.display())
+bst.manual_insert(30, 50, True)  # Insert 30 as the left child of 50
+# print(bst.display())
+bst.manual_insert(20, 30, True)  # Insert 20 as the left child of 30
+# bst.display()
+bst.manual_insert(40, 30, False)  # Insert 40 as the right child of 30
+bst.manual_insert(70, 50, False)  # Insert 70 as the right child of 50
+bst.manual_insert(23, 70, False)
+bst.manual_insert(81, 70, True)
+root = bst.getRoot()
+
+obj = Solution3()
+print(obj.binaryTreePaths(root))

@@ -70,20 +70,25 @@ class createBinarySearchTree:
 
         return output
 
+    def getRoot(self):
+        if self.root is None:
+            return None
+        return self.root
+
 
 ##################################################################################################################
 
-bst = createBinarySearchTree()
-
-# Inserting elements manually
-bst.manual_insert(50, None)  # Root node
+# bst = createBinarySearchTree()
+#
+# # Inserting elements manually
+# bst.manual_insert(50, None)  # Root node
+# # print(bst.display())
+# bst.manual_insert(30, 50, True)  # Insert 30 as the left child of 50
+# # print(bst.display())
+# bst.manual_insert(20, 30, True)  # Insert 20 as the left child of 30
+# # bst.display()
+# bst.manual_insert(40, 30, False)  # Insert 40 as the right child of 30
+# bst.manual_insert(70, 50, False)  # Insert 70 as the right child of 50
+# bst.manual_insert(23, 70, False)
+# bst.manual_insert(None, 70, True)
 # print(bst.display())
-bst.manual_insert(30, 50, True)  # Insert 30 as the left child of 50
-# print(bst.display())
-bst.manual_insert(20, 30, True)  # Insert 20 as the left child of 30
-# bst.display()
-bst.manual_insert(40, 30, False)  # Insert 40 as the right child of 30
-bst.manual_insert(70, 50, False)  # Insert 70 as the right child of 50
-bst.manual_insert(23, 70, False)
-bst.manual_insert(None, 70, True)
-print(bst.display())
