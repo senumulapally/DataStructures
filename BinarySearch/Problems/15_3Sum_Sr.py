@@ -40,7 +40,7 @@ class Solution:
                     continue
 
                 # If we are here, there is atleast one element, that is greater than or equal to compliment.
-                # Run sequential search on the reminder. In worst case this is 0👎
+                # Run sequential search on the reminder. In worst case this is 0(n )
                 while low <= len(nums) - 1:
                     if nums[low] != elem:
                         break
