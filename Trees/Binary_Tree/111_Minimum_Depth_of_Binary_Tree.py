@@ -3,7 +3,7 @@ Given a binary tree, find its minimum depth.
 The minimum depth is the number of nodes along the shortest path from the root node down to the nearest leaf node.
 Note: A leaf is a node with no children.
 
-Sol: Write a recursive function to calculate depths. Here, we need to return the min depth amon left and right depths.
+Sol: Write a recursive function to calculate depths. Here, we need to return the min depth among left and right depths.
 But when Left or Right depth is 1 we need to return max among left and right depths.
 
 2/1/2023

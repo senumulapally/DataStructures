@@ -41,6 +41,8 @@ class Solution(object):
             j -= 1
         return True
 
+# Time Complexity: O(n)
+
 obj = Solution()
 print(obj.isPalindrome('ab_a'))
 print(obj.isPalindrome('Ha@%n am#$asa'))

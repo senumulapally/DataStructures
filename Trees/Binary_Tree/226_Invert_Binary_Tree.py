@@ -1,6 +1,6 @@
 """Given the root of a binary tree, invert the tree, and return its root."""
 
-"""Sol: Write a recursive function to swap the lrft and right nodes for root value and 
+"""Sol: Write a recursive function to swap the left and right nodes for root value and 
 recursively call the function for left and right nodes until 'None' is reached."""
 
 # Definition for a binary tree node.

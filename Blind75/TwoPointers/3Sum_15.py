@@ -57,6 +57,7 @@ class Solution(object):
                             l += 1
         return result
 
+# Time Complexity: O(n sq)
 
 obj = Solution()
 # print(obj.threeSum([-2, 0, 0, 2, 2]))

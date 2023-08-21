@@ -46,5 +46,7 @@ class Solution(object):
                 break
         return maxArea
 
+# Time Complexity: O(n)
+
 obj = Solution()
 print(obj.maxArea([1,8,6,2,5,4,8,3,7]))
